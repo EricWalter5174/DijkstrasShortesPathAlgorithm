@@ -2,16 +2,32 @@
 import static java.lang.Math.max;
 import static java.lang.Math.min;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.*;
 
 public class Dijkstra {
 
-    // An edge class to represent a directed edge
-    // between two nodes with a certain cost.
+    /*
+    * This method takes a Dijkstra Object,
+    * reads a predefined file
+    * and creates the initial graph
+    * !DID NOT WORK!
+    * */
+//    public void readFile(Dijkstra d, File file) throws FileNotFoundException {
+//        Scanner reader = new Scanner(new FileReader(file)).useLocale(Locale.US);
+//        d.n = reader.nextInt();
+//        reader.nextInt();
+//        while(reader.hasNext()){
+//            d.addEdge(reader.nextInt(), reader.nextInt(), reader.nextDouble());
+//        }
+//    }
+
+    /*
+    * An edge class to represent a directed edge
+    * between two nodes with a certain cost.
+    * */
     public static class Edge {
         int to;
         double cost;
@@ -22,7 +38,11 @@ public class Dijkstra {
         }
     }
 
-    private final int n;
+    private int n;
+
+    public void setN(int n){
+        this.n = n;
+    }
 
     private int edgeCount;
     private double[] dist;
@@ -305,6 +325,11 @@ public class Dijkstra {
         public String toString() {
             List<Integer> lst = new ArrayList<>(sz);
             for (int i = 0; i < sz; i++) lst.add(im[i]);
+            // no connection check needs rework
+            if(lst.isEmpty()){
+                System.out.println("There is no connection to that point...");
+                return lst.toString();
+            }
             return lst.toString();
         }
 
