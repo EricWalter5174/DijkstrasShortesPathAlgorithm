@@ -1,7 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -23,7 +22,7 @@ public class Main {
         int fileInput = 0;
         int userInput = 0;
         int startInput = 0;
-        int endInput = 0;
+        int endInput;
         int exit = -1;
 
         /*
