@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -126,8 +127,7 @@ public class Main {
                 }
                 endInput = userInput;
 
-                dijkstra.dijkstra(startInput, endInput);
-                System.out.println(dijkstra.reconstructPath(startInput, endInput).toString());
+                System.out.println(dijkstra.reconstructPath(startInput, endInput).toString() + "\nCost of the shortest Path: " + dijkstra.dijkstra(startInput, endInput));
                 userInput = exit;
             }
             if(fileInput == 2){
@@ -138,7 +138,7 @@ public class Main {
                 endInput = userInput;
 
                 dijkstra1.dijkstra(startInput, endInput);
-                System.out.println(dijkstra1.reconstructPath(startInput, endInput).toString());
+                System.out.println(dijkstra1.reconstructPath(startInput, endInput).toString() + "\nCost of the shortest Path: " + dijkstra1.dijkstra(startInput, endInput));
                 userInput = exit;
             }
             if(fileInput == 3){
@@ -149,12 +149,12 @@ public class Main {
                 endInput = userInput;
 
                 dijkstra2.dijkstra(startInput, endInput);
-                System.out.println(dijkstra2.reconstructPath(startInput, endInput).toString());
+                System.out.println(dijkstra2.reconstructPath(startInput, endInput).toString() + "\nCost of the shortest Path: " + dijkstra2.dijkstra(startInput, endInput));
                 userInput = exit;
             }
 
         }
 
-
     }
+
 }

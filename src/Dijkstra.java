@@ -131,7 +131,10 @@ public class Dijkstra {
         if (start < 0 || start >= n) throw new IllegalArgumentException("Invalid node index");
         List<Integer> path = new ArrayList<>();
         double dist = dijkstra(start, end);
-        if (dist == Double.POSITIVE_INFINITY) return path;
+        if (dist == Double.POSITIVE_INFINITY) {
+            System.out.println("Destination unreachable!");
+            return path;
+        }
         for (Integer at = end; at != null; at = prev[at]) path.add(at);
         Collections.reverse(path);
         return path;
